@@ -10,7 +10,8 @@ A short study of the differential download size improvement that
 % npm install
 % node download.js
 % node compare.js
-287830.3333333333
+Average improvement 266.07 kb
+Average download size 74.71 mb
 ```
 
 On average for [Signal Desktop][2] the savings per each download are thus

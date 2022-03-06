@@ -17,6 +17,7 @@ async function main() {
   }
 
   let improvement = 0;
+  let downloadSize = 0;
   for (let i = 1; i < theirs.length; i++) {
     const us = computeDiff(
       await parseBlockMap(ours[i - 1]),
@@ -28,9 +29,19 @@ async function main() {
   );
 
     improvement += them - us + theirs[i].length - ours[i].length;
+    downloadSize += us;
   }
 
-  console.log(improvement / (theirs.length - 1));
+  console.log(
+    'Average improvement',
+    (improvement / (theirs.length - 1) / 1024).toFixed(2),
+    'kb'
+  );
+  console.log(
+    'Average download size',
+    (downloadSize / (theirs.length - 1) / 1024 / 1024).toFixed(2),
+    'mb'
+  );
 }
 
 main();
