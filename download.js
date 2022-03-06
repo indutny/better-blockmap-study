@@ -31,7 +31,7 @@ async function main() {
 
   // Create blockmaps
   for (const version of VERSIONS) {
-    const file = path.join(DOWNLOADS, `${versions}.zip`);
+    const file = path.join(DOWNLOADS, `${version}.zip`);
     console.log('Creating blockmap for', version);
 
     await Promise.all([
